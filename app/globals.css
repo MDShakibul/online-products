@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
+
 :root {
 	--container: 1200px;
 }
@@ -8,11 +9,15 @@ body {
 	@apply bg-base-100 text-base-content;
 }
 .container {
-	@apply max-w-[var(--container)] mx-auto px-4;
+	@apply max-w-(--container) mx-auto px-4;
 }
 .card-zoom img {
 	@apply transition-transform duration-300 ease-out;
 }
 .card-zoom:hover img {
 	@apply scale-110 rotate-1;
+}
+
+.btn-primary {
+  @apply bg-[#5E568B] rounded-md hover:bg-[#4e46a0];
 }

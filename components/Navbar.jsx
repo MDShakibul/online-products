@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <header className="bg-[#4e6e5d] text-white sticky top-0 z-50">
+    <header className="bg-[#5E568B] text-white sticky top-0 z-50">
       <div className="container h-16 flex items-center justify-between px-4">
         <div className="flex items-center gap-3">
           <Link href="/products" className="font-semibold tracking-tight text-xl md:text-2xl">
@@ -39,7 +39,7 @@ export default function Navbar() {
               <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow">
                 <div className="card-body">
                   <span className="text-lg font-bold text-black">8 Items</span>
-                  <span className="text-info">Subtotal: $999</span>
+                  <span className="text-[#5E568B]">Subtotal: $999</span>
                   <div className="card-actions">
                     <button className="btn btn-primary btn-block">View cart</button>
                   </div>
