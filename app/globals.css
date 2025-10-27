@@ -5,7 +5,7 @@
 	--container: 1200px;
 }
 body {
-	@apply bg-base-100 text-base-content;
+	@apply bg-white text-base-content;
 }
 .container {
 	@apply max-w-(--container) mx-auto px-4;
@@ -15,6 +15,9 @@ body {
 }
 .card-zoom:hover img {
 	@apply scale-110 rotate-1;
+}
+.color-primary{
+	@apply text-[#425A8B];
 }
 
 .btn-primary {

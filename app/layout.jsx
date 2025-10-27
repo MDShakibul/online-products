@@ -1,9 +1,9 @@
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import Providers from './providers';
-import { Raleway } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 
-const raleway = Raleway({ subsets: ['latin'] });
+const dm_sans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata = {
 	title: 'Online Shop',
@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-      <body className={`min-h-screen bg-gray-50 ${raleway.className}`} data-new-gr-c-s-check-loaded="14.1259.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+      <body className={`min-h-screen ${dm_sans.className}`} data-new-gr-c-s-check-loaded="14.1259.0" data-gr-ext-installed="" cz-shortcut-listen="true">
       <Providers>
         <Navbar />
         <main>{children}</main>
