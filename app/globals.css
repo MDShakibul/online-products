@@ -23,9 +23,11 @@ body {
 .btn-primary {
 	@apply inline-flex items-center justify-center gap-2
          rounded-sm px-4 py-2
-         border border-[#425A8B] text-[#1e293b]  
+         border border-[#425A8B] text-[#425A8B]  
          bg-transparent hover:bg-[#425A8B] hover:text-white 
          cursor-pointer transition-colors duration-200
          focus:outline-none focus-visible:ring-2 focus-visible:ring-[#425A8B]/40 focus-visible:ring-offset-2
          disabled:opacity-50 disabled:cursor-not-allowed;
 }
+
+
