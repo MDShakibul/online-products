@@ -1,6 +1,7 @@
 'use client';
 
 import { selectCount, selectTotal } from '@/store';
+import { cashFormat } from '@/util';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
@@ -8,11 +9,11 @@ export default function Navbar() {
 	const count = useSelector(selectCount);
 	const Total = useSelector(selectTotal);
 	return (
-		<header className="bg-[#5E568B] text-white sticky top-0 z-50">
+		<header className="bg-[#425A8B] text-white sticky top-0 z-50">
 			<div className="container h-16 flex items-center justify-between px-4">
 				<div className="flex items-center gap-3">
 					<Link
-						href="/products"
+						href="/"
 						className="font-semibold tracking-tight text-xl md:text-2xl"
 					>
 						Online Shop
@@ -53,9 +54,9 @@ export default function Navbar() {
 							>
 								<div className="card-body">
 									<span className="text-lg font-bold text-black">{count} Items</span>
-									<span className="text-[#5E568B]">Subtotal: ${Total.toFixed(2)}</span>
+									<span className="text-[#5E568B]">Subtotal: {cashFormat(Total)}</span>
 									<div className="card-actions">
-										<Link href={"/cart"} className="btn btn-primary btn-block">
+										<Link href={"/cart"} className="btn btn-primary border-none">
 											View cart
 										</Link>
 									</div>

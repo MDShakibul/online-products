@@ -1,0 +1,1 @@
+export const cashFormat = (price) => `TK ${Number(price || 0).toFixed(2)}`;

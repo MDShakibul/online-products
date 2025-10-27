@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaCartPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice.js';
+import { cashFormat } from '@/util/index.js';
 
 const ProductCard = ({ product }) => {
 	const dispatch = useDispatch();
@@ -11,7 +12,8 @@ const ProductCard = ({ product }) => {
 			href={`/product/${product?.id}`}
 			className="group relative flex flex-col h-full rounded-3xl p-0.5 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
 		>
-			<div className="relative h-64 rounded-t-2xl bg-linear-to-r from-[#45445B] to-[#A79DDA] overflow-hidden">
+			{/* <div className="relative h-64 rounded-t-2xl bg-linear-to-r from-[#45445B] to-[#A79DDA] overflow-hidden"> */}
+			<div className="relative h-64 rounded-t-2xl bg-[#e5e7eb] overflow-hidden">
 				<Image
 					src={product.image}
 					alt={product.title}
@@ -64,8 +66,8 @@ const ProductCard = ({ product }) => {
 						<div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
 							Price
 						</div>
-						<div className="mt-0.5 text-2xl font-extrabold tracking-tight text-slate-900">
-							${product.price.toFixed(2)}
+						<div className="mt-0.5 text-xl font-extrabold tracking-tight text-slate-900">
+							{cashFormat(product.price)}
 						</div>
 					</div>
 
@@ -77,7 +79,7 @@ const ProductCard = ({ product }) => {
 							dispatch(addToCart(product));
 						}}
 					>
-						<FaCartPlus className="mr-2" /> Add to cart
+						<FaCartPlus className="mr-2 text-md" /> Add to cart
 					</button>
 				</div>
 			</div>

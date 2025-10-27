@@ -1,18 +1,40 @@
+'use client';
+import { addToCart } from '@/store/cartSlice';
+import { cashFormat } from '@/util';
 import Link from 'next/link';
-import { FaStar } from 'react-icons/fa';
+import { FaAngleLeft, FaStar } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 const ProductDetails = ({ product }) => {
+	const dispatch = useDispatch();
 	if (!product) return null;
 
 	return (
 		<main className="container mx-auto my-8">
-			<div className="breadcrumbs text-sm">
+			<div className="justify-between breadcrumbs hidden md:flex text-sm">
 				<ul>
 					<li>
-						<Link href={"/"}>Home</Link>
+						<Link href={'/'}>Home</Link>
 					</li>
 					<li className="capitalize">{product.category}</li>
 					<li>{product.title}</li>
 				</ul>
+				<Link
+					href="/"
+					className="flex items-center rounded-xl border border-gray-200 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-gray-700 transition hover:bg-gray-50 active:scale-[.99]"
+				>
+					<FaAngleLeft className="text-sm sm:text-base mr-1" />
+					<span>Back to Shop</span>
+				</Link>
+			</div>
+
+			<div className="flex md:hidden">
+				<Link
+					href="/"
+					className="flex items-center rounded-xl border border-gray-200 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-gray-700 transition hover:bg-gray-50 active:scale-[.99]"
+				>
+					<FaAngleLeft className="text-sm sm:text-base" />
+					<span>Back to Shop</span>
+				</Link>
 			</div>
 			<div className="mt-4 md:mt-8">
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -36,7 +58,9 @@ const ProductDetails = ({ product }) => {
 						</h2>
 
 						<div className="flex flex-wrap items-center justify-between gap-3">
-							<p className="text-xl font-bold md:text-2xl">${product.price}</p>
+							<p className="text-xl font-bold md:text-2xl">
+								{cashFormat(product.price)}
+							</p>
 
 							<div className="flex items-center gap-2">
 								<p className="text-[#8F8F8F] capitalize mb-0 tracking-[0.06em]">
@@ -65,7 +89,12 @@ const ProductDetails = ({ product }) => {
 						</div>
 
 						<div className="pt-2">
-							<button className="inline-flex items-center rounded-xl btn-primary  px-5 py-2.5 text-white shadow">
+							<button
+								className="inline-flex items-center rounded-xl btn-primary  px-5 py-2.5 text-white shadow"
+								onClick={() => {
+									dispatch(addToCart(product));
+								}}
+							>
 								Add to Cart
 							</button>
 						</div>
