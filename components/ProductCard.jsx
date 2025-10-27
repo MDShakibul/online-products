@@ -1,9 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaCartPlus } from 'react-icons/fa';
 
 const ProductCard = ({ product }) => {
 	return (
-		<article className="group relative flex flex-col h-full rounded-3xl p-0.5 hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+		<Link
+			href={`/product/${product?.id}`}
+			className="group relative flex flex-col h-full rounded-3xl p-0.5 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+		>
 			<div className="relative h-64 rounded-t-2xl bg-linear-to-r from-[#45445B] to-[#A79DDA] overflow-hidden">
 				<Image
 					src={product.image}
@@ -67,7 +71,7 @@ const ProductCard = ({ product }) => {
 					</button>
 				</div>
 			</div>
-		</article>
+		</Link>
 	);
 };
 
