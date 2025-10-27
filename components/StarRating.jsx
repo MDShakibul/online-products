@@ -6,10 +6,11 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 export default function StarRating({
 	rating,
 	count,
+	text="",
 	size = 12,
 	color = '#FFA439',
 	emptyColor = '#E5E7EB',
-	className = '',
+	className = 'text-[12px]',
 }) {
 	const safe = Math.min(5, Math.max(0, Math.round(rating * 2) / 2));
 
@@ -27,11 +28,11 @@ export default function StarRating({
 
 	return (
 		<div
-			className={`inline-flex items-center gap-1 ${className}`}
+			className={`inline-flex items-center gap-1`}
 			aria-label={`Rating: ${safe} out of 5`}
 			title={`${safe} / 5`}
 		>
-			{stars} <span className="text-[12px] text-[##8C9EC5]">({count})</span>
+			{stars} <span className={`font-semibold text-[#8C9EC5] ${className}`}>({`${count}${text && ` ${text}`}`})</span>
 		</div>
 	);
 }

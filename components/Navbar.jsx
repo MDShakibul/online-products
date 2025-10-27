@@ -1,13 +1,14 @@
 'use client';
 
-import { selectCount, selectTotal } from '@/store';
-import { cashFormat } from '@/util';
+import { selectCount } from '@/store';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
 export default function Navbar() {
+	const { theme, setTheme } = useTheme();
 	const count = useSelector(selectCount);
-	const Total = useSelector(selectTotal);
+
 	return (
 		<header className="bg-[#425A8B] text-white sticky top-0 z-50">
 			<div className="container h-16 flex items-center justify-between px-4">
@@ -23,7 +24,7 @@ export default function Navbar() {
 				{/* Right Section */}
 				<div className="flex items-center gap-1">
 					<div className="flex-none">
-						<div className="dropdown dropdown-end">
+						<Link href="/cart" className="">
 							<div
 								tabIndex={0}
 								role="button"
@@ -50,7 +51,7 @@ export default function Navbar() {
 								
 							</div>
 
-							<div
+							{/* <div
 								tabIndex={0}
 								className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow"
 							>
@@ -63,9 +64,13 @@ export default function Navbar() {
 										</Link>
 									</div>
 								</div>
-							</div>
-						</div>
+							</div> */}
+						</Link>
 					</div>
+
+					<button className="border rounded-md px-3 py-1" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
+            {theme==='dark'?'Light':'Dark'}
+          </button>
 				</div>
 			</div>
 		</header>

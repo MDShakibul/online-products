@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import ProductCard from './ProductCard';
+import TopPicks from './TopPicks';
 
 export default function Home({ products = [] }) {
   const [search, setSearch] = useState('');
@@ -39,14 +40,7 @@ export default function Home({ products = [] }) {
   return (
     <div className="grid gap-6 md:grid-cols-12">
       <aside
-        className="
-          md:col-span-3 lg:col-span-3
-          md:sticky md:top-20
-          md:max-h-[calc(100vh-5rem)]
-          md:overflow-auto
-          self-start
-        "
-      >
+        className="md:col-span-3 lg:col-span-3 md:sticky md:top-20 md:max-h-[calc(100vh-5rem)] md:overflow-auto self-start">
         <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
           
           <div className="mb-4">
@@ -153,11 +147,16 @@ export default function Home({ products = [] }) {
             No products found. Try clearing filters.
           </div>
         ) : (
+
+          <>
+          <TopPicks products={products} />
+
           <ul className="grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ul>
+          </>
         )}
       </section>
     </div>
