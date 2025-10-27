@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaCartPlus } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/cartSlice.js';
 
 const ProductCard = ({ product }) => {
+	const dispatch = useDispatch();
 	return (
 		<Link
 			href={`/product/${product?.id}`}
@@ -66,7 +69,14 @@ const ProductCard = ({ product }) => {
 						</div>
 					</div>
 
-					<button className="inline-flex items-center justify-center btn-primary px-3 py-2 text-sm font-semibold text-white transition-colors duration-300 ">
+					<button
+						className="inline-flex items-center justify-center btn-primary px-3 py-2 text-sm font-semibold text-white transition-colors duration-300 cursor-pointer"
+						onClick={(e) => {
+							e.preventDefault();
+							e.stopPropagation();
+							dispatch(addToCart(product));
+						}}
+					>
 						<FaCartPlus className="mr-2" /> Add to cart
 					</button>
 				</div>
