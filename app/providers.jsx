@@ -30,7 +30,7 @@ function CartHydrator() {
 export default function Providers({ children }) {
 	return (
 		<Provider store={store}>
-			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
 				<CartHydrator />
 				{children}
 			</ThemeProvider>

@@ -32,7 +32,7 @@ export default function StarRating({
 			aria-label={`Rating: ${safe} out of 5`}
 			title={`${safe} / 5`}
 		>
-			{stars} <span className={`font-semibold text-[#8C9EC5] ${className}`}>({`${count}${text && ` ${text}`}`})</span>
+			{stars} <span className={`font-semibold text-secondary ${className}`}>({`${count}${text && ` ${text}`}`})</span>
 		</div>
 	);
 }

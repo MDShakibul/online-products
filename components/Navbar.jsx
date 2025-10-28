@@ -10,7 +10,7 @@ export default function Navbar() {
 	const count = useSelector(selectCount);
 
 	return (
-		<header className="bg-[#425A8B] text-white sticky top-0 z-50">
+		<nav className="bg-nav text-white border border-gray sticky top-0 z-50">
 			<div className="container h-16 flex items-center justify-between px-4">
 				<div className="flex items-center gap-3">
 					<Link
@@ -51,28 +51,19 @@ export default function Navbar() {
 								
 							</div>
 
-							{/* <div
-								tabIndex={0}
-								className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow"
-							>
-								<div className="card-body">
-									<span className="text-lg font-bold text-black">{count} Items</span>
-									<span className="text-[#5E568B]">Subtotal: {cashFormat(Total)}</span>
-									<div className="card-actions">
-										<Link href={"/cart"} className="btn btn-primary border-none">
-											View cart
-										</Link>
-									</div>
-								</div>
-							</div> */}
+			
 						</Link>
 					</div>
 
 					<button className="border rounded-md px-3 py-1" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
             {theme==='dark'?'Light':'Dark'}
           </button>
+
+		  
+
+		  
 				</div>
 			</div>
-		</header>
+		</nav>
 	);
 }

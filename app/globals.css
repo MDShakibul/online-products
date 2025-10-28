@@ -1,33 +1,80 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
+@theme inline {
+  --color-background: var(--background);
+  --color-nav: var(--nav);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-gray: var(--gray);
+  --color-iplaceholder: var(--iplaceholder);
+  --color-card: var(--card);
+  --color-text-dark: var(--textDark);
+  --color-checkout-bg: var(--checkout-bg);
+  --color-paragraph: var(--paragraph);
+}
+
 :root {
-	--container: 1400px;
+  --container: 1400px;
+  --background: #FFFFFF;
+  --nav: #425A8B;
+  --primary: #425A8B;
+  --secondary: #8C9EC5;
+  --gray: #EFE7EB;
+  --iplaceholder: #f3f4f6;
+  --card: #ffffff;
+  --textDark: #000000;
+  --checkout-bg: #425A8B;
+  --paragraph: #666666;
 }
+
+.dark {
+  --background: #0F172A;
+  --nav: #0F172A;
+  --primary: #FFFFFF;
+  --secondary: #ffffff;
+  --gray: #334155;
+  --iplaceholder: #1E293B;
+  --card: #0F172A;
+   --textDark: #ffffff;
+   --checkout-bg: #000000;
+  --paragraph: #ffffff;
+}
+
 body {
-	@apply bg-white text-base-content;
+  @apply bg-background text-base-content;
 }
+
 .container {
-	@apply max-w-(--container) mx-auto px-4;
+  @apply max-w-(--container) mx-auto px-4;
 }
+
 .card-zoom img {
-	@apply transition-transform duration-300 ease-out;
+  @apply transition-transform duration-300 ease-out;
 }
+
 .card-zoom:hover img {
-	@apply scale-110 rotate-1;
-}
-.color-primary{
-	@apply text-[#425A8B];
+  @apply scale-110 rotate-1;
 }
 
+.color-primary {
+  @apply text-primary;
+}
+
+/* Light mode primary button (kept as-is) */
 .btn-primary {
-	@apply inline-flex items-center justify-center gap-2
-         rounded-sm px-4 py-2
-         border border-[#425A8B] text-[#425A8B]  
-         bg-transparent hover:bg-[#425A8B] hover:text-white 
-         cursor-pointer transition-colors duration-200
-         focus:outline-none focus-visible:ring-2 focus-visible:ring-[#425A8B]/40 focus-visible:ring-offset-2
-         disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply inline-flex items-center justify-center gap-2
+    rounded-sm px-4 py-2
+    border border-[#425A8B] text-[#425A8B]
+    bg-transparent hover:bg-[#425A8B] hover:text-white
+    cursor-pointer transition-colors duration-200
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-[#425A8B]/40 focus-visible:ring-offset-2
+    disabled:opacity-50 disabled:cursor-not-allowed text-[14px] font-bold;
 }
 
+/* Dark mode: make the primary button a white button */
+.dark .btn-primary {
+  @apply border-white hover:bg-white text-[#ffffff] hover:text-[#000000]
+    focus-visible:ring-white/40;
+}
 
