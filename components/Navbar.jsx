@@ -4,6 +4,7 @@ import { selectCount } from '@/store';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
 	const { theme, setTheme } = useTheme();
@@ -55,13 +56,14 @@ export default function Navbar() {
 						</Link>
 					</div>
 
-					<button className="border rounded-md px-3 py-1" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
+					{/* <button className="border rounded-md px-3 py-1" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
             {theme==='dark'?'Light':'Dark'}
-          </button>
-
+          </button> */}
 		  
 
 		  
+		  
+ <ThemeToggle theme={theme} setTheme= {setTheme}/>
 				</div>
 			</div>
 		</nav>
