@@ -54,10 +54,10 @@ export default function CartPage() {
 	};
 
 	return (
-		<div className="sm:p-6 md:p-10">
-			<div className="container grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+		<div className="container sm:p-6 md:p-10">
+			<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
 				{/* Cart Items */}
-				<section className="md:col-span-2 rounded-2xl bg-card p-4 sm:p-6 shadow-xl ring-1 ring-gray-100">
+				<section className="md:col-span-2 bg-card p-4 sm:p-6 rounded-lg border border-gray">
 					<div className="mb-4 sm:mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 						<h1 className="text-2xl sm:text-3xl md:text-2xl font-bold tracking-tight color-primary">
 							Shopping Cart
@@ -94,7 +94,7 @@ export default function CartPage() {
 
 					{!hasItems ? (
 						<div className="flex flex-col items-center justify-center gap-3 py-12 sm:py-16 text-center">
-							<div className="rounded-lg bg-gray-50 px-4 sm:px-6 py-3 sm:py-4 text-gray-600 text-sm sm:text-base">
+							<div className=" px-4 sm:px-6 py-3 sm:py-4 text-text-dark text-sm sm:text-base">
 								Your cart is empty.
 							</div>
 							<Link
@@ -155,7 +155,7 @@ export default function CartPage() {
 										{/* Qty controls */}
 										<div className="flex items-center gap-2 sm:gap-3">
 											<button
-												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition hover:bg-gray-50 active:scale-[.98] cursor-pointer text-secondary"
+												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
 												onClick={() => dispatch(decreaseQuantity(item.id))}
 												aria-label={`Decrease quantity of ${item.title}`}
 											>
@@ -165,7 +165,7 @@ export default function CartPage() {
 												{item.quantity}
 											</span>
 											<button
-												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition hover:bg-gray-50 active:scale-[.98] cursor-pointer text-secondary"
+												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
 												onClick={() => dispatch(increaseQuantity(item.id))}
 												aria-label={`Increase quantity of ${item.title}`}
 											>
@@ -185,7 +185,7 @@ export default function CartPage() {
 				</section>
 
 				{/* Summary / Checkout */}
-				<aside className="md:sticky md:top-20 h-fit rounded-lg bg-card p-4 sm:p-6 shadow-xl ring-1 ring-gray-100 self-start">
+				<aside className="md:sticky md:top-20 h-fit bg-card p-4 sm:p-6 rounded-lg border border-gray self-start">
 					<h2 className="text-lg sm:text-xl md:text-2xl font-bold color-primary">
 						Order Summary
 					</h2>

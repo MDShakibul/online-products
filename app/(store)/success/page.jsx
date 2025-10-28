@@ -7,7 +7,7 @@ import { IoHomeOutline } from "react-icons/io5";
 
 export default function PaymentSuccessPage() {
   return (
-    <main className="h-[90vh] bg-background relative overflow-hidden">
+    <main className="h-[80vh] bg-background relative overflow-hidden">
 
       <section className="relative z-10 mx-auto flex min-h-full max-w-2xl flex-col items-center justify-center px-6 py-10 text-center">
         

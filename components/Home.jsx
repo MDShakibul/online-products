@@ -155,8 +155,10 @@ export default function Home({ products = [] }) {
 				) : (
 					<>
 						<TopPicks products={products} />
+						<h2 className="text-lg font-semibold text-text-dark my-2">All Products</h2>
+			<div className="w-full h-px bg-gray-300"></div>
 
-						<ul className="grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+						<ul className="grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-4">
 							{filteredProducts.map((product) => (
 								<ProductCard key={product.id} product={product} />
 							))}

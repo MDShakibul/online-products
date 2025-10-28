@@ -37,17 +37,17 @@ const ConfirmModal = ({
 			
 			<div
 				ref={dialogRef}
-				className="relative z-10 w-full max-w-md rounded-xl bg-white p-5 shadow-2xl ring-1 ring-black/10"
+				className="relative z-10 w-full max-w-md bg-background rounded-lg border border-gray p-5 shadow-2xl ring-1 ring-black/10"
 			>
 				<h3 id="confirm-title" className="text-lg font-bold color-primary">
 					{title}
 				</h3>
-				<p className="mt-2 text-sm text-gray-600">{message}</p>
+				<p className="mt-2 text-sm text-text-dark">{message}</p>
 
 				<div className="mt-5 flex items-center justify-end gap-2">
 					<button
 						type="button"
-						className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 cursor-pointer"
+						className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-text-dark cursor-pointer"
 						onClick={onCancel}
 					>
 						{cancelText}

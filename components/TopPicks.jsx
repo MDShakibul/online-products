@@ -11,9 +11,10 @@ export default function TopPicks({ products = [] }) {
 
 	return (
 		<section className="mb-6 space-y-3">
-			<h2 className="text-lg font-semibold text-text-dark">Top 10 Picks</h2>
+			<h2 className="text-lg font-semibold text-text-dark mb-2">Top 10 Product Finder</h2>
+			<div className="w-full h-px bg-gray-300"></div>
 
-			<div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5">
+			<div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 mt-4">
 				{picks.map((pick) => (
 					<Link
 						key={pick.id}
