@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
 			href={`/product/${product?.id}`}
 			className="group flex h-full flex-col overflow-hidden rounded-lg border border-gray bg-card shadow-sm transition-shadow hover:shadow-lg"
 		>
-			{/* Image (fixed height) */}
+
 			<div className="relative h-56 md:h-64 bg-iplaceholder">
 				<Image
 					src={product.image}
@@ -25,19 +25,19 @@ const ProductCard = ({ product }) => {
 				/>
 			</div>
 
-			{/* Body (single container; grid keeps price+button aligned; description LAST) */}
+
 			<div className="grid flex-1 grid-rows-[auto_auto_auto_1fr_auto_auto_auto] gap-2 p-5">
-				{/* Category */}
+
 				<p className="text-[12px] capitalize text-secondary">
 					{product.category}
 				</p>
 
-				{/* Title */}
+
 				<h4 className="text-[14px] font-semibold leading-snug color-primary line-clamp-2">
 					{product?.title}
 				</h4>
 
-				{/* Rating */}
+
 				<div className="h-5 flex items-center">
 					<StarRating
 						rating={product.rating.rate}
@@ -46,17 +46,17 @@ const ProductCard = ({ product }) => {
 					/>
 				</div>
 
-				{/* Spacer (1fr) → pushes price + button to consistent baseline */}
+
 				<div />
 
-				{/* PRICE (its own row) */}
+
 				<div>
 					<span className="text-[20px] font-extrabold tracking-tight color-primary">
 						{cashFormat(product.price)}
 					</span>
 				</div>
 
-				{/* BUTTON (next row) */}
+
 				<div>
 					<button
 						className="btn-primary w-full justify-center"
@@ -66,7 +66,7 @@ const ProductCard = ({ product }) => {
 							dispatch(addToCart(product));
 						}}
 					>
-						{/* cart icon */}
+
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="mr-2 h-5 w-5"
@@ -85,7 +85,7 @@ const ProductCard = ({ product }) => {
 					</button>
 				</div>
 
-				{/* DESCRIPTION (bottom, clamped so cards stay uniform) */}
+
 				<p className="text-[12px] leading-4 color-primary line-clamp-2 mt-2">
 					{(product?.description?.length ?? 0) > 80
 						? product.description.slice(0, 80) + '…'

@@ -17,7 +17,7 @@ import {
 } from '../../../store/cartSlice.js';
 import { selectCart, selectTotal } from '../../../store/index.js';
 
-/* ---------- Page ---------- */
+
 export default function CartPage() {
 	const cart = useSelector(selectCart) || { items: [] };
 	const total = useSelector(selectTotal) || 0;
@@ -25,7 +25,7 @@ export default function CartPage() {
 	const router = useRouter();
 	const hasItems = (cart?.items?.length || 0) > 0;
 
-	// modal state: { type: 'remove' | 'clear' | 'checkout', itemId?: string|number, title?: string }
+
 	const [modal, setModal] = useState(null);
 
 	const openRemove = (item) =>
@@ -56,7 +56,7 @@ export default function CartPage() {
 	return (
 		<div className="container sm:p-6 md:p-10">
 			<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-				{/* Cart Items */}
+
 				<section className="md:col-span-2 bg-card p-4 sm:p-6 rounded-lg border border-gray">
 					<div className="mb-4 sm:mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 						<h1 className="text-2xl sm:text-3xl md:text-2xl font-bold tracking-tight color-primary">
@@ -84,7 +84,7 @@ export default function CartPage() {
 						</div>
 					</div>
 
-					{/* Header row (desktop) */}
+
 					<div className="hidden grid-cols-6 gap-4 border-b pb-3 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-500 md:grid">
 						<span className="col-span-3 color-primary">Product</span>
 						<span className="color-primary">Price</span>
@@ -184,7 +184,7 @@ export default function CartPage() {
 					)}
 				</section>
 
-				{/* Summary / Checkout */}
+				{/* Checkout */}
 				<aside className="md:sticky md:top-20 h-fit bg-card p-4 sm:p-6 rounded-lg border border-gray self-start">
 					<h2 className="text-lg sm:text-xl md:text-2xl font-bold color-primary">
 						Order Summary

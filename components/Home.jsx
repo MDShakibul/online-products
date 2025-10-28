@@ -54,7 +54,7 @@ export default function Home({ products = [] }) {
 						/>
 					</div>
 
-					{/* Category list (single-select like radio) */}
+					{/* Category list */}
 					<h3 className="mb-3 text-lg font-semibold text-primary">
 						Categories
 					</h3>
@@ -132,7 +132,7 @@ export default function Home({ products = [] }) {
 				</div>
 			</aside>
 
-			{/* RIGHT CONTENT */}
+			{/* Right Content */}
 			<section className="md:col-span-9 lg:col-span-9">
 				<div className="mb-2 text-sm text-gray-500 md:hidden">
 					{category !== 'all' && (

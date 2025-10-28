@@ -42,7 +42,6 @@ const ProductDetails = ({ product }) => {
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 					{/* Image card */}
 					<div className="rounded-2xl border bg-iplaceholder border-gray  p-4 shadow-s">
-						{/* swap to next/image if you prefer */}
 						<Image
 							src={product.image}
 							alt={product.title}
@@ -71,13 +70,7 @@ const ProductDetails = ({ product }) => {
 						<p className="text-xl font-bold md:text-2xl text-primary">
 							{cashFormat(product.price)}
 						</p>
-						{/* <div
-							className="my-6 h-px w-full bg-repeat-x"
-							style={{
-								backgroundImage:
-									'repeating-linear-gradient(to right, #d1d5db 0, #d1d5db 14px, transparent 12px, transparent 24px)',
-							}}
-						/> */}
+						
 						<div className="w-full h-px bg-gray-300"></div>
 
 						<div className=" leading-relaxed">

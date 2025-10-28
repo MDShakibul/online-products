@@ -1,5 +1,3 @@
-// app/payment/success/page.tsx (Next.js App Router)
-// or use as a component anywhere you like.
 'use client';
 
 import Link from 'next/link';

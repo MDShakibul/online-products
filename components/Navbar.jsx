@@ -48,22 +48,11 @@ export default function Navbar() {
 									</svg>
 									<span className="badge badge-xs indicator-item">{count}</span>
 								</div>
-
-								
 							</div>
-
-			
 						</Link>
 					</div>
 
-					{/* <button className="border rounded-md px-3 py-1" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
-            {theme==='dark'?'Light':'Dark'}
-          </button> */}
-		  
-
-		  
-		  
- <ThemeToggle theme={theme} setTheme= {setTheme}/>
+					<ThemeToggle theme={theme} setTheme={setTheme} />
 				</div>
 			</div>
 		</nav>

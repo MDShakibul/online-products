@@ -1,4 +1,3 @@
-// StarRating.jsx
 'use client';
 
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
