@@ -61,7 +61,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | Project setup and Tailwind class definitions | 20 min |
 | Homepage (product list, search, filter, navigation, footer) | 2 hours |
 | Product details page | 30 min |
-| Cart page and calculation logic | 1 hour |
+| Cart page and calculation logic | 1.5 hour |
 | Light and dark mode implementation | 1.5 hours |
 | Responsive design checks | 30 min |
 | Testing and debugging | 1 hour |

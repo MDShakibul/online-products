@@ -71,7 +71,7 @@ const ProductDetails = ({ product }) => {
 							{cashFormat(product.price)}
 						</p>
 						
-						<div className="w-full h-px bg-gray-300"></div>
+						<div className="w-full h-px bg-gray"></div>
 
 						<div className=" leading-relaxed">
 							<p className="mb-1 text-lg text-text-dark font-semibold">

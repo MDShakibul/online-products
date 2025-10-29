@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { IoHomeOutline } from "react-icons/io5";
+import { FaAngleLeft } from 'react-icons/fa6';
 
 export default function PaymentSuccessPage() {
   return (
@@ -39,7 +39,7 @@ export default function PaymentSuccessPage() {
           href="/"
           className="mt-8 inline-flex items-center justify-center rounded-md btn-primary px-6 py-3 text-sm sm:text-base font-semibold text-white transition hover:opacity-90 active:scale-[.99]"
         >
-          <IoHomeOutline /> Go To Continue Shopping
+          <FaAngleLeft /> Back To Continue Shopping
         </Link>
       </section>
     </main>

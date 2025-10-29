@@ -1,4 +1,4 @@
-export const cashFormat = (price) => `TK ${Number(price ?? 0).toLocaleString('en-BD')}`;
+export const cashFormat = (price) => `$${Number(price ?? 0).toLocaleString('en-BD')}`;
 export function topProductsByScore(products, product_count = 10) {
   const scored = products
     .map(p => ({

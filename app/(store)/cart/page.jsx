@@ -47,8 +47,8 @@ export default function CartPage() {
 		} else if (modal.type === 'clear') {
 			dispatch(clearCart());
 		} else if (modal.type === 'checkout') {
-			router.push('/success');
 			dispatch(clearCart());
+			router.push('/success');
 		}
 		closeModal();
 	};
@@ -67,7 +67,7 @@ export default function CartPage() {
 							{hasItems && (
 								<button
 									onClick={openClear}
-									className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-red-600 transition hover:bg-red-100 active:scale-[.99] cursor-pointer"
+									className="rounded-md border border-red-200 bg-red-50 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-red-600 transition hover:bg-red-100 active:scale-[.99] cursor-pointer"
 								>
 									<span className="flex items-center">
 										<RiDeleteBin6Line fontSize={18} className="mr-1" />
@@ -155,7 +155,7 @@ export default function CartPage() {
 										{/* Qty controls */}
 										<div className="flex items-center gap-2 sm:gap-3">
 											<button
-												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
+												className="h-9 w-9 sm:h-10 sm:w-10 rounded-md border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
 												onClick={() => dispatch(decreaseQuantity(item.id))}
 												aria-label={`Decrease quantity of ${item.title}`}
 											>
@@ -165,7 +165,7 @@ export default function CartPage() {
 												{item.quantity}
 											</span>
 											<button
-												className="h-9 w-9 sm:h-10 sm:w-10 rounded-lg border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
+												className="h-9 w-9 sm:h-10 sm:w-10 rounded-md border border-gray-300 text-lg leading-none transition active:scale-[.98] cursor-pointer text-secondary"
 												onClick={() => dispatch(increaseQuantity(item.id))}
 												aria-label={`Increase quantity of ${item.title}`}
 											>
